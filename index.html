@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Election Navigator</title>
+  <meta name="description"
+    content="Election Navigator helps citizens solve election-related issues through guided steps and an AI assistant." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="bg-canvas">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="app-container">
+    <header class="splash-screen" aria-labelledby="app-title">
+      <span class="splash-badge">Citizen Support System</span>
+      <h1 class="splash-title" id="app-title">Election Navigator</h1>
+      <p class="splash-subtitle">A guided, interactive system that helps you handle common election challenges quickly and clearly.</p>
+      <img
+        class="hero-image"
+        src="assets/election-navigator-hero.svg"
+        alt="Illustration of citizens navigating election services"
+        width="320"
+        height="180"
+      />
+    </header>
+
+    <main>
+      <section class="insight-card insight-dyk" aria-labelledby="problem-heading">
+        <h2 class="insight-tag" id="problem-heading">Problem</h2>
+        <p class="insight-text">Voters often drop off because election guidance is scattered, unclear, or not personalized to their immediate issue. Election Navigator solves this with one-step-at-a-time instructions and an AI assistant.</p>
+      </section>
+
+      <section class="persona-section" aria-labelledby="situation-heading">
+        <h2 class="persona-label" id="situation-heading">Choose Your Situation</h2>
+        <div class="persona-grid situation-grid" id="situation-grid" role="group" aria-label="Situation selector">
+          <button class="persona-card situation-btn" type="button" data-situation="first-time" aria-label="First-time voter" aria-pressed="false">
+            <span class="persona-icon" aria-hidden="true">🗳️</span>
+            <span class="persona-name">First-time Voter</span>
+            <span class="persona-desc">Get registered and vote with confidence.</span>
+          </button>
+
+          <button class="persona-card situation-btn" type="button" data-situation="lost-id" aria-label="Lost voter ID" aria-pressed="false">
+            <span class="persona-icon" aria-hidden="true">🪪</span>
+            <span class="persona-name">Lost Voter ID</span>
+            <span class="persona-desc">Recover your voter details and documents.</span>
+          </button>
+
+          <button class="persona-card situation-btn" type="button" data-situation="shifted-city" aria-label="Shifted city" aria-pressed="false">
+            <span class="persona-icon" aria-hidden="true">🏙️</span>
+            <span class="persona-name">Shifted City</span>
+            <span class="persona-desc">Transfer your registration to the new city.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="insight-card insight-for-you guidance-section" aria-labelledby="guidance-heading" aria-live="polite">
+        <h2 class="insight-tag" id="guidance-heading">Guided Steps</h2>
+        <h3 class="stage-title" id="guidance-title">Select a situation to begin</h3>
+        <p class="stage-subtitle" id="guidance-subtitle">Your step-by-step election action plan will appear here.</p>
+        <ol class="steps-list guidance-steps" id="guidance-steps"></ol>
+      </section>
+
+      <section class="ai-section" aria-labelledby="ai-heading">
+        <div class="ai-header">
+          <div class="ai-avatar" aria-hidden="true">🤖</div>
+          <div>
+            <h2 class="ai-name" id="ai-heading">AI Assistant</h2>
+            <p class="ai-status" id="ai-status">Powered by Google Gemini</p>
+          </div>
+        </div>
+
+        <label class="persona-label" for="ai-input">Ask anything about elections</label>
+        <div class="ai-input-wrap">
+          <input
+            type="text"
+            class="ai-input"
+            id="ai-input"
+            placeholder="Example: What documents are needed for voter registration?"
+            aria-label="Ask anything about elections"
+          />
+          <button class="ai-send-btn" id="ai-send-btn" type="button" aria-label="Ask AI assistant">Ask</button>
+        </div>
+        <div class="ai-chat-area" id="ai-chat-area" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+
+</html>
